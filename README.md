@@ -12,7 +12,7 @@
     - Header
     - Main Movie
         - Trailer in Background
-        - Title and Description
+        - Title & Description
         - MovieSuggestion
             - MovieLists * N
 - Netflix GPT
