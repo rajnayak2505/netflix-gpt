@@ -2,7 +2,11 @@
 
 - Create React App
 - Configured Tailwid CSS
+- Routing
 - Header and Login page
+- Sign Up Form
+- Form Validation
+- useRef Hook
 
 
 # Features
