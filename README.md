@@ -2,6 +2,7 @@
 
 - Create React App
 - Configured Tailwid CSS
+- Header and Login page
 
 
 # Features
