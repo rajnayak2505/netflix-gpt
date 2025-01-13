@@ -1,7 +1,9 @@
+import LoginHeader from "./LoginHeader";
+
 const Browse = () => {
     return(
         <div className="browse">
-            Browse
+            <LoginHeader/>
         </div>
     );
 }
