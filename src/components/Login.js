@@ -3,16 +3,15 @@ import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import { auth } from "../utils/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { LOGO, LOGIN_BG_IMG, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
 
     const [isSignInForm, setIsSignForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null)
     const [customMsg, setCustomMsg] = useState("Invalid Credential")
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     // const name = useRef(null);
@@ -36,12 +35,11 @@ const Login = () => {
                 // Signed up 
                 const user = userCredential.user;
                 updateProfile(user, {
-                    displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/41257462?v=4&size=64"
+                    displayName: name.current.value, photoURL: USER_AVATAR
                   }).then(() => {
                     // Profile updated!
                     const {uid, email, displayName, photoURL} = auth.currentUser;
                     dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-                    navigate("/browse")
                   }).catch((error) => {
                     // An error occurred
                     setErrorMessage(error.message)
@@ -60,7 +58,6 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 // console.log(user)
-                navigate("/browse")
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -80,8 +77,9 @@ const Login = () => {
     return(
         <>
         <Header/>
-            <div className="login">
-                <div className="login h-lvh bg-cover fixed top-0 right-0 bottom-0 left-0" style={{backgroundImage: "url('https://assets.nflxext.com/ffe/siteui/vlv3/47c2bc92-5a2a-4f33-8f91-4314e9e62ef1/web/IN-en-20240916-TRIFECTA-perspective_72df5d07-cf3f-4530-9afd-8f1d92d7f1a8_small.jpg')"}}>
+            <div className="loginpage">
+            <img className="w-60 absolute top-5 left-5 z-20 " src={LOGO}/>
+                <div className="login h-lvh bg-cover fixed top-0 right-0 bottom-0 left-0" style={{backgroundImage: LOGIN_BG_IMG}}>
                 </div>
                 <div className="bg-divcenter w-fit h-fit absolute right-0 top-0 bottom-0 left-0 m-auto z-20 p-20 text-white ">
                     <div className="text-4xl font-bold mb-6 ">{isSignInForm? "Sign In" : "Sign Up"}</div>
