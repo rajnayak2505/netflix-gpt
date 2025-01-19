@@ -16,9 +16,6 @@ const Header = () => {
         });
     };
 
-    
-      
-    
     return(
         <>
             <div className="header h-20 bg-black flex justify-between align-middle p-4 pe-8">

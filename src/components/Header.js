@@ -38,7 +38,7 @@ const Header = () => {
     return(
         <>
         {( user &&
-            <div className="header w-screen h-20 bg-black flex justify-between align-middle p-4 pe-8 fixed z-10">
+            <div className="header w-screen h-20 bg-black flex justify-between align-middle p-4 pe-8 fixed z-20">
                 <img className="w-40" src={LOGO}/>
                     <div className="flex">
                         <div className="mx-5">

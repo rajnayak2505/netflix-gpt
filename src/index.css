@@ -14,3 +14,25 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.movie-item {
+  overflow-x: scroll; /* Add the ability to scroll */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.movie-item::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.movie-item {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.video-title{
+  overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 4; 
+   -webkit-box-orient: vertical;
+}
