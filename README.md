@@ -26,6 +26,9 @@
 - Update store with Trailer Video Data
 - Embedded the Youtube video and make it autoplay and mute as for background
 - Build Secondary component
+- Build Movies List
+- Build Movie card
+- use custome hook for usePopularMovies && useTopRatedMovies && useUpcomingMovies
 
 
 # Features

@@ -29,10 +29,45 @@ code {
   scrollbar-width: none;  /* Firefox */
 }
 
-.video-title{
+.video-dec{
   overflow: hidden;
    display: -webkit-box;
    -webkit-line-clamp: 4; /* number of lines to show */
     line-clamp: 4; 
    -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 600px) {
+  .video-title{
+    font-size: 20px;
+    width: 348px;
+    margin-left: 20px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .video-dec{
+    font-size: 12px;
+    margin-left: 20px;
+    width: 348px;
+    line-height: 1.5;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2; 
+    margin-bottom: 55px;
+  }
+  .video-title-wrap .text-head{
+    margin-top: 125px;
+  }
+  iframe{
+    /* width: 580px !important; */
+    height: 450px !important;
+  }
+  .movie-list h1{
+    font-size: 20px;
+  }
+  .-mt-52{
+    margin-top: -8rem;
+  }
+  .movie-item img{
+    max-width: 9rem;
+  }
 }
