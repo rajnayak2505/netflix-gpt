@@ -29,6 +29,9 @@
 - Build Movies List
 - Build Movie card
 - use custome hook for usePopularMovies && useTopRatedMovies && useUpcomingMovies
+- GPT Search page
+- GPT Search Bar
+- Multi-laguage feature in GPT page
 
 
 # Features
