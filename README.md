@@ -50,3 +50,9 @@
 - Netflix GPT
     - Search Bar
     -  Movie Suggestion
+ 
+![image](https://github.com/user-attachments/assets/6c6f6363-87bc-4a7c-a1c7-b0c683f4a570)
+![image](https://github.com/user-attachments/assets/f3afea5e-207c-4c8d-aec6-8630e043c880)
+![image](https://github.com/user-attachments/assets/26d6a667-6b3c-4704-aa42-974873bd927b)
+![image](https://github.com/user-attachments/assets/826f2459-7f27-4108-bdd0-08146c591c7c)
+
