@@ -1,9 +1,15 @@
+import { Link } from "react-router-dom";
 import { IMG_CDN_URL } from "../utils/constants";
 
-const MovieCard = ({posterPath }) => {
+const MovieCard = ({posterPath, title }) => {
+
+  if(!posterPath) return null;
+
   return (
     <div>
-        <img className="max-w-44 mx-3" alt="Movie card" src={IMG_CDN_URL + posterPath} />
+        <Link to="/watch">
+          <img className="max-w-44 mx-3 text-white" alt={title} src={IMG_CDN_URL + posterPath} />
+        </Link>
     </div>
   )
 }

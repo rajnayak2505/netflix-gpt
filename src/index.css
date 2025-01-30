@@ -37,7 +37,7 @@ code {
    -webkit-box-orient: vertical;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1079px) {
   .video-title{
     font-size: 20px;
     width: 348px;
@@ -69,5 +69,14 @@ code {
   }
   .movie-item img{
     max-width: 9rem;
+  }
+  .auth-head{
+    height: 85px;
+  }
+  .login{
+    height: auto;
+  }
+  .bg-divcenter{
+    padding: 16px;
   }
 }

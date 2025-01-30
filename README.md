@@ -32,6 +32,8 @@
 - GPT Search page
 - GPT Search Bar
 - Multi-laguage feature in GPT page
+- Added .env
+- Use Memoization for API
 
 
 # Features

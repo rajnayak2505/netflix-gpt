@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { LOGO } from "../utils/constants";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { toggleGptSearchView, toggleProfileDropDown } from "../utils/gptSlice";
 import {langs, SUPPORTED_LANGS} from "../utils/languageConstants";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector((store => store.user))
-    const showGptSearch= useSelector(store => store.gpt.showGptSearch)
+    const user = useSelector((store => store.user));
+    const showGptSearch= useSelector(store => store.gpt.showGptSearch);
+    const profileDropDown= useSelector(store => store.gpt.profileDropDown);
 
     const handleSignedOut = () => {
         signOut(auth).then(() => {
@@ -48,24 +49,37 @@ const Header = () => {
         dispatch(changeLanguage(e.target.value));
     }
 
+    const handleProfileClick = (e) => {
+        dispatch(toggleProfileDropDown())
+    }
+
     return(
         <>
         {( user &&
             <div className="header w-screen h-20 bg-black flex justify-between align-middle p-4 pe-8 fixed z-20">
                 <img className="w-40" src={LOGO}/>
-                    <div className="flex justify-center align-middle">
-                        {showGptSearch && <select className="mr-5 h-9" onChange={handleLanguageChange}>
+                <div>
+                   <div className="flex">
+                       <button className="text-white text-sm pr-2 pl-2 bg-slate-600 rounded-sm mr-1"
+                       onClick={handleGptSearchClick}
+                       >{showGptSearch?"Home":"GPT Search"}</button>
+                    <div 
+                        onClick={handleProfileClick}
+                        className="cursor-pointer flex justify-end ">
+                            <img className="w-10 inline" src={user.photoURL} alt="User Image"/>
+                            <span className="relative -top-1">🔽</span>
+                        </div>
+                   </div>
+                    { profileDropDown && <div className="auth-head bg-black h-16 w-36 text-center pt-2 pb-2 border-2 border-white">
+                        {showGptSearch && <select className="" onChange={handleLanguageChange}>
                             {SUPPORTED_LANGS.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
                         </select>}
-                        <button className="text-white px-5 bg-slate-600 rounded-sm"
-                        onClick={handleGptSearchClick}
-                        >{showGptSearch?"Home":"GPT Search"}</button>
-                        <div className="mx-5">
+                        <div className="">
                             <p className="text-white text-sm">{user.displayName}</p>
-                            <img className="w-10" src={user.photoURL} alt="User Image"/>
                         </div>
-                        <button onClick={handleSignedOut} className=" text-white px-5 bg-red-600 rounded-sm ">Logout</button>
-                    </div>
+                        <button onClick={handleSignedOut} className=" text-white rounded-sm ">Logout</button>
+                    </div>}
+                </div>
             </div>
             )}
         </>
