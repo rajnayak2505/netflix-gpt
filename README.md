@@ -51,6 +51,8 @@
     - Search Bar
     -  Movie Suggestion
  
+  
+![image](https://github.com/user-attachments/assets/4ae5267b-7adc-447a-8a2e-bd22e2dc40c4)
 ![image](https://github.com/user-attachments/assets/6c6f6363-87bc-4a7c-a1c7-b0c683f4a570)
 ![image](https://github.com/user-attachments/assets/f3afea5e-207c-4c8d-aec6-8630e043c880)
 ![image](https://github.com/user-attachments/assets/26d6a667-6b3c-4704-aa42-974873bd927b)
